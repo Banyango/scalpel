@@ -1,0 +1,31 @@
+{
+  "name": "scalpel",
+  "version": "0.1.0",
+  "description": "A cross-provider agent skills plugin for surgical precision in AI-assisted development",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc"
+  },
+  "skills": "./skills/",
+  "keywords": [
+    "skills",
+    "agent",
+    "claude",
+    "codex",
+    "cursor",
+    "gemini",
+    "workflows"
+  ],
+  "author": {
+    "name": "Kyle Reczek",
+    "email": "kyle@banyango.com"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/Banyango/scalpel",
+  "repository": "https://github.com/Banyango/scalpel",
+  "dependencies": {},
+  "devDependencies": {
+    "typescript": "^5.5.3"
+  },
+  "private": false
+}

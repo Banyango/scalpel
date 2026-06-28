@@ -1,0 +1,39 @@
+{
+  "name": "scalpel",
+  "version": "0.1.0",
+  "description": "Surgical precision skills for AI-assisted development: focused workflows, careful implementation, and disciplined delivery",
+  "author": {
+    "name": "Kyle Reczek",
+    "email": "kyle@banyango.com",
+    "url": "https://github.com/Banyango"
+  },
+  "homepage": "https://github.com/Banyango/scalpel",
+  "repository": "https://github.com/Banyango/scalpel",
+  "license": "MIT",
+  "keywords": [
+    "skills",
+    "workflows",
+    "precision",
+    "development"
+  ],
+  "skills": "./skills/",
+  "hooks": "./hooks/hooks-codex.json",
+  "interface": {
+    "displayName": "Scalpel",
+    "shortDescription": "Surgical precision workflows for AI-assisted development",
+    "longDescription": "Scalpel gives your coding agent a set of disciplined skills for focused implementation, careful debugging, and precise delivery — cutting away noise and staying on target.",
+    "developerName": "Kyle Reczek",
+    "category": "Coding",
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
+    "defaultPrompt": [
+      "I have a feature to implement precisely.",
+      "Help me debug this without guessing."
+    ],
+    "websiteURL": "https://github.com/Banyango/scalpel",
+    "brandColor": "#3B82F6"
+  }
+}

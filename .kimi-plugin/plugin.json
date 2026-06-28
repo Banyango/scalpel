@@ -1,0 +1,33 @@
+{
+  "name": "scalpel",
+  "version": "0.1.0",
+  "description": "Surgical precision skills for AI-assisted development: focused workflows, careful implementation, and disciplined delivery",
+  "author": {
+    "name": "Kyle Reczek",
+    "email": "kyle@banyango.com"
+  },
+  "homepage": "https://github.com/Banyango/scalpel",
+  "license": "MIT",
+  "keywords": [
+    "skills",
+    "workflows",
+    "precision",
+    "development"
+  ],
+  "skills": "./skills/",
+  "sessionStart": {
+    "skill": "using-scalpel"
+  },
+  "skillInstructions": "Kimi Code tool mapping for Scalpel skills:\n\n- When a Scalpel skill says to ask the user, call Kimi Code's `AskUserQuestion` tool with 1 question and 2-4 concrete options. Put the recommended option first with `(Recommended)` suffix.\n- When a skill refers to `TodoWrite` or task tracking, use Kimi Code's `TodoList` tool.\n- When a skill says to dispatch a subagent, use Kimi Code's `Agent` tool. For implementation work use `subagent_type: \"coder\"`, for read-only exploration use `subagent_type: \"explore\"`, for planning use `subagent_type: \"plan\"`.\n- When a skill refers to the `Skill` tool, use Kimi Code's native `Skill` tool.\n- Use Kimi Code's `Read`, `Write`, `Edit`, `Bash`, `Grep`, `Glob`, `FetchURL`, and `WebSearch` tools by their actual exposed names.",
+  "interface": {
+    "displayName": "Scalpel",
+    "shortDescription": "Surgical precision workflows for AI-assisted development",
+    "developerName": "Kyle Reczek",
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
+    "websiteURL": "https://github.com/Banyango/scalpel"
+  }
+}

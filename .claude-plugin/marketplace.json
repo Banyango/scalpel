@@ -1,0 +1,20 @@
+{
+  "name": "scalpel-dev",
+  "description": "Development marketplace for the Scalpel skills plugin",
+  "owner": {
+    "name": "Kyle Reczek",
+    "email": "kyle@banyango.com"
+  },
+  "plugins": [
+    {
+      "name": "scalpel",
+      "description": "Surgical precision skills for AI-assisted development: focused workflows, careful implementation, and disciplined delivery",
+      "version": "0.1.0",
+      "source": "./",
+      "author": {
+        "name": "Kyle Reczek",
+        "email": "kyle@banyango.com"
+      }
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "name": "scalpel",
+  "description": "Surgical precision skills for AI-assisted development: focused workflows, careful implementation, and disciplined delivery",
+  "version": "0.1.0",
+  "author": {
+    "name": "Kyle Reczek",
+    "email": "kyle@banyango.com"
+  },
+  "homepage": "https://github.com/Banyango/scalpel",
+  "repository": "https://github.com/Banyango/scalpel",
+  "license": "MIT",
+  "keywords": [
+    "skills",
+    "workflows",
+    "precision",
+    "development"
+  ],
+  "skills": "./skills/"
+}
