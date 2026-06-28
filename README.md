@@ -43,10 +43,10 @@ This method can help you regain control.
 
 ## Benefits
 
-1. You understand the changes within the context of your project and its standards. Missed something? the plan step will catch it.
-2. We prioritize continuing to understand how the program works at a file level. So that the long term health of the project is maintained.
-3. Plans aren't giant markdown files or sprawling contexts. Each plan is small and focused on a single file so it's easy to review yourself.
-4. Since the changes are small they can be easily reviewed in an MR by others, or by another LLM. 
+1. Since you're manually creating .plans at a file level you maintain a mental model of the program.
+2. When you miss a standard the plan will catch it and you can update your mental model of the program.
+3. Plans aren't giant markdown files or sprawling contexts. Each plan is small and focused on a single file so it's easy to review.
+4. MR reviews of the plan files are easy because the plan file is a small contained unit. 
 
 ## Where this approach works best
 
