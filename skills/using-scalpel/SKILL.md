@@ -31,15 +31,7 @@ User message → Is there a skill for this? → Yes: invoke it → Follow the sk
 
 Scalpel separates planning from implementation. The typical flow:
 
-### 1. Define the feature (optional but recommended)
-
-```
-/scalpel:feature add OAuth login via GitHub
-```
-
-Scalpel will ask clarifying questions, challenge the scope, and write the approved objective to `.scalpel/change.md`. All subsequent plan evaluations reference this file automatically.
-
-### 2. Create `.plan` files
+### 1. Create `.plan` files
 
 For each file that needs to change, create a `.plan` file next to it with the same base name:
 
@@ -49,7 +41,7 @@ src/app/auth.py   →   src/app/auth.plan
 
 Copy `skills/plan/plan.template.md` as a starting point. Fill in the `file` field and describe the change under `## Change`.
 
-### 3. Evaluate your plans
+### 2. Evaluate your plans
 
 If you defined a feature:
 ```
@@ -63,7 +55,7 @@ If you're scoping to a smaller change within the feature, or skipped `/scalpel:f
 
 Scalpel reads your `.plan` files, checks them against the feature objective and project standards (`AGENTS.md` / `CLAUDE.md`), flags misalignments, and suggests plan files you may have missed. Iterate on your `.plan` files until you're satisfied.
 
-### 4. Implement
+### 3. Implement
 
 ```
 /scalpel:implement
@@ -81,7 +73,6 @@ Scalpel applies every `.plan` file to its target. It follows the plan exactly. I
 - **implement** (`/scalpel:implement`) — apply all `.plan` files to their target source files; slash-command only
 - **example-workflow** — template showing how Scalpel skills are structured
 
-Add your own skills as `skills/<skill-name>/SKILL.md`.
 
 ## Platform Tool Mapping
 
@@ -99,14 +90,3 @@ Skills speak in platform-neutral actions. See the appropriate reference file for
 3. **Default system prompt** — lowest
 
 If the user says "don't use X workflow" and a skill says "always use X", follow the user.
-
-## Writing New Skills
-
-To add a skill to this plugin:
-
-1. Create `skills/<your-skill-name>/SKILL.md`
-2. Add frontmatter: `name:` and `description:` (description is used to match skills to tasks)
-3. Write the skill content — focus on the WHY and the invariants, not the obvious steps
-4. Test it: invoke the skill and see if the agent follows it correctly
-
-See `skills/example-workflow/SKILL.md` for a complete template.

@@ -35,10 +35,11 @@ This method can help you regain control.
 1. Start by creating `.plan` files right next to the source file you want to change. `src/app/auth.py` →
    `src/app/auth.plan`
 2. Describe the change you want to make in plain language. Include a code example, if you want.
-3. Run `/scalpel:plan <description of what you're trying to achieve>` to evaluate your plans.
-4. Scalpel will flag any misalignment and suggest additional plan files you may need.
-5. Review those suggestions and iterate.
-6. When your plans are clean, run `/scalpel:implement` to apply them to the source files. Scalpel will follow the plan
+3. Create for all the other `.plan` files according to what you know needs adding. (You know because you have a mental model of the project)
+4. Run `/scalpel:plan <description of what you're trying to achieve>` to evaluate your plans.
+5. Scalpel will flag any misalignment and suggest additional plan files you may need.
+6. Review those suggestions and iterate.
+7. When your plans are clean, run `/scalpel:implement` to apply them to the source files. Scalpel will follow the plan
    exactly.
 
 ### Benefits
