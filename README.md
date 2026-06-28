@@ -41,14 +41,14 @@ This method can help you regain control.
 6. When your plans are clean, run `/scalpel:implement` to apply them to the source files. Scalpel will follow the plan
    exactly.
 
-## Benefits
+### Benefits
 
 1. Since you're manually creating .plans at a file level you maintain a mental model of the program.
 2. When you miss a standard the plan will catch it and you can update your mental model of the program.
 3. Plans aren't giant markdown files or sprawling contexts. Each plan is small and focused on a single file so it's easy to review.
 4. MR reviews of the plan files are easy because the plan file is a small contained unit. 
 
-## Where this approach works best
+### Where this approach works best
 
 1. You're finding plan mode plans outputs a wall of text that is hard to review and understand.
 2. You work on a team (alone is fine too)
@@ -56,6 +56,15 @@ This method can help you regain control.
 4. You have a strong idea of the architecture and standards of your project. 
 5. You want to personally maintain a high level of understanding of your codebase as it changes rapidly, even though you're not typing it out anymore.
 6. You want to easily review plans in an MR before implementation.
+
+### Where this doesn't work
+
+1. You don't care about code quality and are just letting the LLM write code for you.
+2. You're in fully autonomous mode letting the LLMs go wild. Things like Ralph loops.
+3. You don't have a strong idea of the architecture and standards of your project and none was implemented.
+4. You don't care about maintaining a mental model of your codebase.
+
+## Commands
 
 Three slash commands drive the workflow:
 
