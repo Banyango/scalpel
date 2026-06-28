@@ -28,7 +28,7 @@ This method can help you regain control.
 - Manually creating `.plan` files keeps your mental model of the codebase intact even as it changes rapidly.
 - You don't lose the speed benefit of LLM-assisted development.
 - A standards review step ensures each plan meets your conventions at the file level. 
-- Small, focused plan files make MR reviews tractable before a single line of code is written — so standards stay high while still getting all the benefits of rapid LLM-assisted development.
+- Small, focused plan files make MR reviews easy to digest.
 
 ## How It Works
 
