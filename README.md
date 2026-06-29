@@ -32,20 +32,18 @@ This method can help you regain control.
 
 ## How It Works
 
-1. Start by creating `.plan` files right next to the source file you want to change. `src/app/auth.py` →
-   `src/app/auth.plan`
-2. Describe the change you want to make in plain language. Include a code example, if you want.
-3. Create for all the other `.plan` files according to what you know needs adding. (You know because you have a mental model of the project)
-4. Run `/scalpel:plan <description of what you're trying to achieve>` to evaluate your plans.
-5. Scalpel will flag any misalignment and suggest additional plan files you may need.
-6. Review those suggestions and iterate.
-7. When your plans are clean, run `/scalpel:implement` to apply them to the source files. Scalpel will follow the plan
+1. Create `.plan` files right next to the source file you want to change. `src/app/auth.py` →
+   `src/app/auth.plan`. Use plain language, include a code example if you want.
+2. Create `.plan` for all the other files that you need to change.
+3. Run `/scalpel:plan <description of what you're trying to achieve>` to evaluate your plans. Scalpel will add plans you missed.
+4. Review those suggestions.
+5. Run `/scalpel:implement` to create the code changes. Scalpel will follow the plan
    exactly.
 
 ### Benefits
 
 1. Since you're manually creating .plans at a file level you maintain a mental model of the program.
-2. When you miss a standard the plan will catch it and you can update your mental model of the program.
+2. When you miss something the plan will catch it.
 3. Plans aren't giant markdown files or sprawling contexts. Each plan is small and focused on a single file so it's easy to review.
 4. MR reviews of the plan files are easy because the plan file is a small contained unit. 
 
