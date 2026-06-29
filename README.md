@@ -25,9 +25,9 @@ Have you been using LLMs and found that you no longer understand your own code? 
 
 This method can help you regain control. 
 
-- Manually creating `.plan` files keeps your mental model of the codebase intact even as it changes rapidly.
+- Manually creating `.plan` files at a file by file level keeps your mental model of the codebase intact.
 - You don't lose the speed benefit of LLM-assisted development.
-- A standards review step ensures each plan meets your conventions at the file level. 
+- A standards review step ensures each `.plan` meets your conventions at the file level. 
 - Small, focused plan files make MR reviews easy to digest.
 
 ## How It Works
