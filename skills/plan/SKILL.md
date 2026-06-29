@@ -1,8 +1,8 @@
 ---
 name: plan
-description: Gather all .plan files, evaluate them against the current feature objective, and suggest missing plans — no implementation
+description: Gather all .plan files, evaluate them against the stated objective (if provided), and suggest missing plans — no implementation
 disable-model-invocation: true
-argument-hint: <describe the desired change - micro changes, for macro use the feature skill>
+argument-hint: <describe the change>
 ---
 
 # Scalpel Plan
@@ -13,14 +13,12 @@ Evaluate existing `.plan` files and identify gaps. This skill does not implement
 
 ### 1. Determine the Objective
 
-Check whether `.scalpel/change.md` exists and whether `$ARGUMENTS` was provided.
+Check whether `$ARGUMENTS` was provided.
 
-| `change.md` | Arguments | Result                                                                                                                                                                             |
-|-------------|-----------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| exists      | provided  | Arguments are the **scoped objective**; `change.md` is the **broader objective**. Evaluate plans against the scoped objective and verify they don't conflict with the broader one. |
-| exists      | absent    | `change.md` is the objective.                                                                                                                                                      |
-| absent      | provided  | Arguments are the objective.                                                                                                                                                       |
-| absent      | absent    | No objective. Summarize plans only check existing plans for standards alignment; skip alignment and gap detection.                                                                 |
+| Arguments | Result |
+|-----------|--------|
+| provided  | Arguments are the objective. Evaluate plans against them. |
+| absent    | No objective. Check existing plans for standards alignment only; skip alignment and gap detection. |
 
 ### 2. Load Project Standards
 
@@ -72,8 +70,7 @@ Review each plan against the objective (if available) and the project standards 
 - Whether the plan's described change is sufficient, incomplete, or misaligned with the objective
 - Whether the approach in the plan violates any standard or architectural constraint from step 2 — cite the specific
   rule when flagging a violation
-- Whether any plans conflict with each other or with the broader objective
-- If a broader objective also exists, whether the scoped plans stay consistent with it
+- Whether any plans conflict with each other
 
 Present findings as a concise list — one line per plan file. If no objective is available, summarize what each plan
 intends to do.
@@ -92,7 +89,6 @@ Create the missing plan files — list them so the user can see what was added.
 ## Rules
 
 - No implementation — do not modify any source files
-- Do not modify `.scalpel/change.md`
 - Never invent standards — only apply what is explicitly written in the standards files
 - When citing a standard violation, quote or reference the specific rule from the source file
 - Be specific, brevity is important to not overwhelm the plans with too much information such that a user cannot quickly understand the plan.

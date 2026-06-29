@@ -71,7 +71,6 @@ Three slash commands drive the workflow:
 
 | Command              | What it does                              |
 |----------------------|-------------------------------------------|
-| `/scalpel:feature`   | Define and lock the objective (optional)  |
 | `/scalpel:plan`      | Evaluate plan files against the objective |
 | `/scalpel:implement` | Apply plan files to source files          |
 
@@ -119,15 +118,7 @@ The `type` field is optional; if omitted, it defaults to `modify`. If the target
 
 ```
 
-Scalpel reads all `.plan` files, checks them against your feature objective and project standards (`AGENTS.md` / `CLAUDE.md`), flags anything misaligned or missing, and suggests additional plan files you may need.
-
-For a scoped sub-task within the broader feature:
-
-```
-
-/scalpel:plan add the token exchange step only
-
-```
+Scalpel reads all `.plan` files, checks them against your project standards (`AGENTS.md` / `CLAUDE.md`), flags anything misaligned or missing, and suggests additional plan files you may need.
 
 Iterate on your `.plan` files until the evaluation is clean.
 
@@ -141,16 +132,6 @@ Iterate on your `.plan` files until the evaluation is clean.
 
 Scalpel applies every `.plan` file to its target, one at a time, following the plan exactly. If a plan conflicts with a project standard or another plan, it stops and surfaces the conflict before continuing. It will not resolve conflicts on its own.
 
-### Optional: Define the feature
-
-```
-/scalpel:feature add OAuth login via GitHub
-```
-
-Use the feature skill to create an overarching objective for your plans, instead of relying on the optional description in `/scalpel:plan`. Scalpel will ask clarifying questions, challenge the scope, and write the approved objective to `.scalpel/change.md`. All subsequent plan evaluations reference this file automatically.
-
-It will get cleaned up after `/scalpel:implement` is run.
-
 ## Installation
 
 ### Claude Code
@@ -159,7 +140,7 @@ It will get cleaned up after `/scalpel:implement` is run.
 /plugin install scalpel@git+https://github.com/Banyango/scalpel.git
 ```
 
-Skills are available as `/scalpel:feature`, `/scalpel:plan`, and `/scalpel:implement`.
+Skills are available as `/scalpel:plan` and `/scalpel:implement`.
 
 ### Cursor
 

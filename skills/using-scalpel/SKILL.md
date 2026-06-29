@@ -43,17 +43,11 @@ Copy `skills/plan/plan.template.md` as a starting point. Fill in the `file` fiel
 
 ### 2. Evaluate your plans
 
-If you defined a feature:
-```
-/scalpel:plan
-```
-
-If you're scoping to a smaller change within the feature, or skipped `/scalpel:feature`:
 ```
 /scalpel:plan <describe the specific change>
 ```
 
-Scalpel reads your `.plan` files, checks them against the feature objective and project standards (`AGENTS.md` / `CLAUDE.md`), flags misalignments, and suggests plan files you may have missed. Iterate on your `.plan` files until you're satisfied.
+Scalpel reads your `.plan` files, checks them against project standards (`AGENTS.md` / `CLAUDE.md`), flags misalignments, and suggests plan files you may have missed. Iterate on your `.plan` files until you're satisfied.
 
 ### 3. Implement
 
@@ -68,8 +62,7 @@ Scalpel applies every `.plan` file to its target. It follows the plan exactly. I
 ## Available Skills
 
 - **using-scalpel** — this skill; loaded at session start
-- **feature** (`/scalpel:feature`) — interrogate and record the feature objective to `.scalpel/change.md`; slash-command only
-- **plan** (`/scalpel:plan`) — evaluate all `*.plan` files against the feature objective and project standards, suggest gaps; slash-command only
+- **plan** (`/scalpel:plan`) — evaluate all `*.plan` files against project standards, suggest gaps; slash-command only
 - **implement** (`/scalpel:implement`) — apply all `.plan` files to their target source files; slash-command only
 - **example-workflow** — template showing how Scalpel skills are structured
 
