@@ -1,7 +1,6 @@
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="assets/logo-dark.png">
-    <img src="assets/logo.png" width="256" alt="Scalpel">
+    <img src="assets/logo.jpg" width="256" alt="Scalpel">
   </picture>
 </p>
 
@@ -228,8 +227,12 @@ Why this change is being made.
 ## Acceptance Criteria
 
 - [ ] Observable outcome that confirms the change is correct.
-```
 
 ## License
 
 [MIT](LICENSE).
+
+### Logo
+
+<a href="https://www.vecteezy.com/free-vector/scalpel">Scalpel Vectors by Vecteezy</a>
+
