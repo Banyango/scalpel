@@ -1,6 +1,7 @@
 ---
 name: using-scalpel
 description: Use at the start of any session - establishes how to find and use Scalpel skills before responding to the user
+disable-model-invocation: true
 ---
 
 # Using Scalpel

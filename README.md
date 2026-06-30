@@ -21,11 +21,11 @@
 
 Surgically plan your changes. 
 
-Have you been using LLMs and found that you no longer understand your own code? That you get the LLM to make a plan, and it seems fine, but once the implementation lands things work but the code fails review? Do you work somewhere that devs are merging at a blazing pace without following standards and the codebase is slowly turning to muck?
+Have you been using LLMs and found that you no longer understand your own code? That you get the LLM to make a plan, and it seems fine, but once the implementation lands things fall apart? Do you work somewhere that devs are merging at a blazing pace without following standards and the codebase is slowly turning to muck?
 
 This method can help you regain control. 
 
-- Manually creating `.plan` files at a file by file level keeps your mental model of the codebase intact.
+- Creating `.plan` files at a file by file level keeps your mental model of the codebase intact.
 - You don't lose the speed benefit of LLM-assisted development.
 - A standards review step ensures each `.plan` meets your conventions at the file level. 
 - Small, focused plan files make MR reviews easy to digest.
