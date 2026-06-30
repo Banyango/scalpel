@@ -21,14 +21,14 @@
 
 Surgically plan your changes. 
 
-Have you been using LLMs and found that you no longer understand your own code? That you get the LLM to make a plan, and it seems fine, but once the implementation lands things fall apart? Do you work somewhere that devs are merging at a blazing pace without following standards and the codebase is slowly turning to muck?
+Have you been using LLMs and found that you no longer understand your own code? 
 
 This method can help you regain control. 
 
 - Creating `.plan` files at a file by file level keeps your mental model of the codebase intact.
 - You don't lose the speed benefit of LLM-assisted development.
 - A standards review step ensures each `.plan` meets your conventions at the file level. 
-- Small, focused plan files make MR reviews easy to digest.
+- Small, focused plan files make MR reviews of your plans easy to digest.
 
 ## How It Works
 
@@ -42,7 +42,7 @@ This method can help you regain control.
 
 ### Benefits
 
-1. Since you're manually creating .plans at a file level you maintain a mental model of the program.
+1. Since you're creating .plans at a file level you maintain a mental model of the program.
 2. When you miss something the plan will catch it.
 3. Plans aren't giant markdown files or sprawling contexts. Each plan is small and focused on a single file so it's easy to review.
 4. MR reviews of the plan files are easy because the plan file is a small contained unit. 
@@ -50,11 +50,10 @@ This method can help you regain control.
 ### Where this approach works best
 
 1. You're finding plan mode plans outputs a wall of text that is hard to review and understand.
-2. You work on a team (alone is fine too)
-3. Codebase is large enough that multiple people/plans won't trip over each other.
-4. You have a strong idea of the architecture and standards of your project. 
-5. You want to personally maintain a high level of understanding of your codebase as it changes rapidly, even though you're not typing it out anymore.
-6. You want to easily review plans in an MR before implementation.
+2. Codebase is large enough that multiple people/plans won't trip over each other.
+3. You have a strong idea of the architecture and standards of your project. 
+4. You want to personally maintain a high level of understanding of your codebase as it changes rapidly, even though you're not typing it out anymore.
+5. You want to easily review plans in an MR before implementation.
 
 ### Where this doesn't work
 
@@ -85,17 +84,18 @@ Lazy:
 Add a login function
 ```
 
-With frontmatter and description:
+With full structure:
 ```markdown
 ---
 file: src/app/auth.py
 type: modify
 ---
 
-## Change
+## Summary
 
-Add a `login_with_github(code: str) -> User` function that exchanges an OAuth
-code for a token, fetches the GitHub user profile, and returns a User object.
+Add GitHub OAuth login so users can authenticate without a password.
+
+## Content
 
 ```python
 def login_with_github(code: str) -> User:
@@ -104,8 +104,18 @@ def login_with_github(code: str) -> User:
     return User.from_github(profile)
 ```
 
-The `file` field names the target. The description tells the agent what to build. A code example pins the implementation shape.
-The `type` field is optional; if omitted, it defaults to `modify`. If the target file does not exist, Scalpel will create it.
+## Key Details
+
+- `exchange_code` is already implemented in `oauth.py` — reuse it, don't rewrite.
+- Returns a `User` object; raises `AuthError` on failure.
+
+## Acceptance Criteria
+
+- [ ] A valid OAuth code returns a populated `User` object.
+- [ ] An invalid code raises `AuthError`.
+```
+
+The `file` field names the target. The `type` field is optional; if omitted, it defaults to `modify`. If the target file does not exist, Scalpel will create it.
 
 
 ### 2. Evaluate your plans
@@ -200,10 +210,24 @@ file: path/to/target/file.py   # required — the file to modify
 type: add | modify | move | delete
 ---
 
-## Change
+## Summary
 
-Describe the change in plain language. Include a code example if the
-implementation shape matters.
+Why this change is being made.
+
+## Content
+
+```language
+// The code to be added or changed.
+```
+
+## Key Details
+
+- Non-obvious constraints, invariants, or decisions the implementer needs to know.
+- Edge cases to handle.
+
+## Acceptance Criteria
+
+- [ ] Observable outcome that confirms the change is correct.
 ```
 
 ## License
