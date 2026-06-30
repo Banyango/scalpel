@@ -1,7 +1,7 @@
 <p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="assets/logo-dark.png">
-    <img src="assets/logo.png" width="220" alt="Scalpel">
+    <img src="assets/logo.png" width="256" alt="Scalpel">
   </picture>
 </p>
 
