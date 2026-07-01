@@ -215,9 +215,9 @@ Why this change is being made.
 
 ## Content
 
-```language
+/```language
 // The code to be added or changed.
-```
+/```
 
 ## Key Details
 
@@ -227,6 +227,7 @@ Why this change is being made.
 ## Acceptance Criteria
 
 - [ ] Observable outcome that confirms the change is correct.
+```
 
 ## License
 
