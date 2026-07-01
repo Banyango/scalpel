@@ -96,12 +96,12 @@ Add GitHub OAuth login so users can authenticate without a password.
 
 ## Content
 
-```python
+/```python
 def login_with_github(code: str) -> User:
     token = exchange_code(code)
     profile = fetch_github_profile(token)
     return User.from_github(profile)
-```
+/```
 
 ## Key Details
 
