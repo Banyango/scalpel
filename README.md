@@ -14,6 +14,7 @@
   <img src="https://img.shields.io/github/stars/Banyango/scalpel?style=flat-square&color=111111&label=stars" alt="Stars">
   <img src="https://img.shields.io/github/v/release/Banyango/scalpel?style=flat-square&color=111111&label=release" alt="Release">
   <img src="https://img.shields.io/badge/license-MIT-111111?style=flat-square" alt="MIT license">
+  <img src="https://skills.sh/b/Banyango/scalpel" alt="Skills.sh">
 </p>
 
 > “The job is no longer typing code; it is maintaining enough understanding to trust what was typed.”
@@ -28,6 +29,7 @@ This method can help you regain control.
 - You don't lose the speed benefit of LLM-assisted development.
 - A standards review step ensures each `.plan` meets your conventions at the file level. 
 - Small, focused plan files make MR reviews of your plans easy to digest.
+
 
 ## How It Works
 
@@ -190,6 +192,12 @@ See `.opencode/INSTALL.md` for full OpenCode setup instructions.
 ### Gemini CLI
 
 Load `GEMINI.md` from this repo into your project root, or import it from your existing `GEMINI.md`.
+
+### Skills.sh
+
+```bash
+npx skills add Banyango/scalpel
+```
 
 ## Project Standards
 
