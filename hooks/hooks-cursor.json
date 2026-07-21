@@ -1,9 +1,0 @@
-{
-  "hooks": {
-    "onSessionStart": [
-      {
-        "skill": "using-scalpel"
-      }
-    ]
-  }
-}
