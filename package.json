@@ -1,6 +1,6 @@
 {
   "name": "scalpel",
-  "version": "0.1.0",
+  "version": "0.1.4",
   "description": "A cross-provider agent skills plugin for surgical precision in AI-assisted development",
   "main": "dist/index.js",
   "scripts": {

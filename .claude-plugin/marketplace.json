@@ -9,7 +9,7 @@
     {
       "name": "scalpel",
       "description": "Surgical precision skills for AI-assisted development: focused workflows, careful implementation, and disciplined delivery",
-      "version": "0.1.0",
+      "version": "0.1.4",
       "source": "./",
       "author": {
         "name": "Kyle Reczek",
