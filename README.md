@@ -146,7 +146,8 @@ Scalpel applies every `.plan` file to its target, one at a time, following the p
 ### Claude Code
 
 ```bash
-/plugin install scalpel@git+https://github.com/Banyango/scalpel.git
+/plugin marketplace add Banyango/scalpel
+/plugin install scalpel@scalpel-dev
 ```
 
 Skills are available as `/scalpel:plan` and `/scalpel:implement`.
