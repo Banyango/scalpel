@@ -19,14 +19,10 @@
 
 > “The job is no longer typing code; it is maintaining enough understanding to trust what was typed.”
 
-Surgically plan your changes. 
+When you aren't vibe coding and need to make sure your code changes are right use Scalpel to surgically plan your changes. 
 
-Have you been using LLMs and found that you no longer understand your own code? 
-
-This method can help you regain control. 
-
-- Creating `.plan` files at a file by file level keeps your mental model of the codebase intact.
-- You don't lose the speed benefit of LLM-assisted development.
+- Creates `.plan` files at a file by file level keeps your mental model of the codebase intact.
+- Instead of a big markdown file or a html file you can understand the change at a file level. 
 - A standards review step ensures each `.plan` meets your conventions at the file level. 
 - Small, focused plan files make MR reviews of your plans easy to digest.
 
@@ -43,25 +39,18 @@ This method can help you regain control.
 
 ### Benefits
 
-1. Since you're creating .plans at a file level you maintain a mental model of the program.
-2. When you miss something the plan will catch it.
+1. Planning is much easier to comprehend. You see exactly what the change will be.
+2. If you manually created .plan files the /scalpel:plan action will catch it.
 3. Plans aren't giant markdown files or sprawling contexts. Each plan is small and focused on a single file so it's easy to review.
 4. MR reviews of the plan files are easy because the plan file is a small contained unit. 
 
 ### Where this approach works best
 
 1. You're finding plan mode plans outputs a wall of text that is hard to review and understand.
-2. Codebase is large enough that multiple people/plans won't trip over each other.
-3. You have a strong idea of the architecture and standards of your project. 
-4. You want to personally maintain a high level of understanding of your codebase as it changes rapidly, even though you're not typing it out anymore.
-5. You want to easily review plans in an MR before implementation.
+2. Planning out a change before getting the llm to implement it 
+3. You want to personally maintain a level of understanding of your codebase as it changes rapidly, even though you're not typing it out anymore.
+4. You want to easily review plans in an MR before implementation.
 
-### Where this doesn't work
-
-1. You don't care about code quality and are just letting the LLM write code for you.
-2. You're in fully autonomous mode letting the LLMs go wild. Things like Ralph loops.
-3. You don't have a strong idea of the architecture and standards of your project and none was implemented.
-4. You don't care about maintaining a mental model of your codebase.
 
 ## Commands
 
