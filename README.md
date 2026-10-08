@@ -23,7 +23,7 @@ When you aren't vibe coding and need to make sure your code changes are right, u
 changes.
 
 - Create `.plan` files right beside the real file for a much clearer picture on what the AI is planning on doing.
-- Small plans for individual files make changes easier to contextualize than a large Markdown or HTML document.
+- Small individual files make changes easier to contextualize than large Markdown or HTML documents.
 - A standards review step ensures each and every `.plan` meets your AGENT.md conventions.
 - Working with small, focused plan files make MR reviews of your plans easy to digest by others.
 
