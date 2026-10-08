@@ -19,13 +19,13 @@
 
 > “The job is no longer typing code; it is maintaining enough understanding to trust what was typed.”
 
-When you aren't vibe coding and need to make sure your code changes are right, use Scalpel to surgically plan your changes.
+When you aren't vibe coding and need to make sure your code changes are right, use Scalpel to surgically plan your
+changes.
 
-- Creating `.plan` files for individual files keeps your mental model of the codebase intact.
-- Small plans for individual files make changes easier to understand than a large Markdown or HTML document.
-- A standards review step ensures each `.plan` meets your conventions at the file level.
-- Small, focused plan files make MR reviews of your plans easy to digest.
-
+- Create `.plan` files right beside the real file for a much clearer picture on what the AI is planning on doing.
+- Small plans for individual files make changes easier to contextualize than a large Markdown or HTML document.
+- A standards review step ensures each and every `.plan` meets your AGENT.md conventions.
+- Working with small, focused plan files make MR reviews of your plans easy to digest by others.
 
 ## How It Works
 
@@ -35,39 +35,50 @@ You can have AI create the `.plan` files or write them manually.
 
 1. Run `/scalpel:plan <the change you want to make>` to create `.plan` files.
 2. Review the created `.plan` files.
-3. If you're happy with the plans, run `/scalpel:implement`.
+3. Make any necessary adjustments to the plans.
+    1. Chat with the AI to clarify or refine the plans.
+    2. Changes are easy to understand because each plan is small and focused on a single file.
+    3. You could push a draft MR to see what others think of the plans before implementing them.
+4. If you're happy with the plans, run `/scalpel:implement`. The agent will exactly follow the plans to make the code
+   changes.
 
 ### Create the plans manually
 
-1. Create a `.plan` file next to each source file you want to change. For example, `src/app/auth.plan` targets `src/app/auth.py` when you specify that path in the `file` field. Use plain language and include a code example if you want.
+1. Create a `.plan` file next to each source file you want to change. For example, `src/app/auth.plan` targets
+   `src/app/auth.py` when you specify that path in the `file` field. Use plain language and include a code example if
+   you want.
 2. Create `.plan` files for all the other files that need to change.
-3. Run `/scalpel:plan <description of what you're trying to achieve>` to evaluate your plans. Scalpel will add any missing plans.
+3. Run `/scalpel:plan <description of what you're trying to achieve>` to evaluate your plans. Scalpel will add any
+   missing plans.
 4. Review the findings and any added plans.
-5. If you're happy with the plans, run `/scalpel:implement` to apply the code changes. Scalpel will follow the plans exactly.
+5. If you're happy with the plans, run `/scalpel:implement` to apply the code changes. Scalpel will follow the plans
+   exactly.
 
 ### Benefits
 
 1. Planning is much easier to comprehend. You see exactly what the change will be.
-2. If you manually create `.plan` files and miss a required change, `/scalpel:plan` will identify the gap and add the missing plan.
-3. Plans aren't giant markdown files or sprawling contexts. Each plan is small and focused on a single file so it's easy to review.
+2. If you manually create `.plan` files and miss a required change, `/scalpel:plan` will identify the gap and add the
+   missing plan.
+3. Plans aren't giant markdown files or sprawling contexts. Each plan is small and focused on a single file so it's easy
+   to review.
 4. MR reviews of plan files are easy because each plan is a small, focused unit.
 
 ### Where this approach works best
 
 1. You find that plan mode produces a wall of text that is hard to review and understand.
 2. You want to plan a change before asking the LLM to implement it.
-3. You want to personally maintain a level of understanding of your codebase as it changes rapidly, even though you're not typing it out anymore.
+3. You want to personally maintain a level of understanding of your codebase as it changes rapidly, even though you're
+   not typing it out anymore.
 4. You want to easily review plans in an MR before implementation.
-
 
 ## Commands
 
 Two slash commands drive the workflow:
 
-| Command              | What it does                              |
-|----------------------|-------------------------------------------|
-| `/scalpel:plan`      | Evaluate plans and create missing ones     |
-| `/scalpel:implement` | Apply plan files to source files          |
+| Command              | What it does                           |
+|----------------------|----------------------------------------|
+| `/scalpel:plan`      | Evaluate plans and create missing ones |
+| `/scalpel:implement` | Apply plan files to source files       |
 
 ## Workflow
 
@@ -78,11 +89,13 @@ For each file that needs to change, create a `.plan` file next to it:
 You can write plans in plain language; Scalpel will normalize them automatically when you run `/scalpel:plan`.
 
 Minimal:
+
 ```markdown
 Add a login function
 ```
 
 With full structure:
+
 ```markdown
 ---
 file: src/app/auth.py
@@ -113,8 +126,8 @@ def login_with_github(code: str) -> User:
 - [ ] An invalid code raises `AuthError`.
 ```
 
-The `file` field names the target. The `type` field is optional; if omitted, it defaults to `modify`. If the target file does not exist, Scalpel will create it.
-
+The `file` field names the target. The `type` field is optional; if omitted, it defaults to `modify`. If the target file
+does not exist, Scalpel will create it.
 
 ### 2. Evaluate your plans
 
@@ -124,7 +137,8 @@ The `file` field names the target. The `type` field is optional; if omitted, it 
 
 ```
 
-Scalpel reads all `.plan` files, checks them against your project standards (`AGENTS.md` / `CLAUDE.md`), flags anything misaligned or missing, and creates any missing plan files needed to meet your objective.
+Scalpel reads all `.plan` files, checks them against your project standards (`AGENTS.md` / `CLAUDE.md`), flags anything
+misaligned or missing, and creates any missing plan files needed to meet your objective.
 
 Iterate on your `.plan` files until the evaluation is clean.
 
@@ -136,7 +150,9 @@ Iterate on your `.plan` files until the evaluation is clean.
 
 ```
 
-Scalpel applies every `.plan` file to its target, one at a time, following the plan exactly. If a plan conflicts with a project standard or another plan, it stops and surfaces the conflict before continuing. It will not resolve conflicts on its own.
+Scalpel applies every `.plan` file to its target, one at a time, following the plan exactly. If a plan conflicts with a
+project standard or another plan, it stops and surfaces the conflict before continuing. It will not resolve conflicts on
+its own.
 
 ## Installation
 
